@@ -46,6 +46,10 @@ def compute_hcf(x, y):
             hcf = i 
     return hcf
 
+# This function finds the exponent of a number
+def compute_power(number, exponent):
+    return number**exponent
+
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
@@ -53,6 +57,7 @@ print("3.Multiply")
 print("4.Divide")
 print("5.LCM of 2 numbers")
 print("6.HCF of 2 numbers")
+print("7.Power")
 print("0.Exit")
 
 while True:
@@ -81,6 +86,9 @@ while True:
             
         elif choice == '6':
             print(num1, "/", num2, "=", compute_hcf(num1, num2))
+            
+        elif choice == '7':
+            print(num1, "/", num2, "=", compute_power(num1, num2))            
             
     elif choice == '0':
         print('Thanks for using')
