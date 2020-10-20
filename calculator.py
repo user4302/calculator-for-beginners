@@ -47,8 +47,8 @@ def compute_hcf(x, y):
     return hcf
 
 # This function finds the exponent of a number
-def compute_power(number, exponent):
-    return number**exponent
+def compute_power(base, exponent):
+    return pow(base, exponent)
 
 print("Select operation.")
 print("1.Add")
