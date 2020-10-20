@@ -17,7 +17,7 @@ def divide(x, y):
     if y != 0:
         return x / y  # denominator can't be zero
     else:
-        return 'inf'
+        return 'denominator can not be zero'
     
 # This function finds the L.C.M. of two input number
 def compute_lcm(x, y):
@@ -34,12 +34,25 @@ def compute_lcm(x, y):
        greater += 1
     return lcm
 
+# This function finds the H.C.F of two numbers
+def compute_hcf(x, y):
+# choose the smaller number
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            hcf = i 
+    return hcf
+
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide")
 print("5.LCM of 2 numbers")
+print("6.HCF of 2 numbers")
 print("0.Exit")
 
 while True:
@@ -65,6 +78,9 @@ while True:
             
         elif choice == '5':
             print(num1, "/", num2, "=", compute_lcm(num1, num2))
+            
+        elif choice == '6':
+            print(num1, "/", num2, "=", compute_hcf(num1, num2))
             
     elif choice == '0':
         print('Thanks for using')
