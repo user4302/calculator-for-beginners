@@ -2,6 +2,7 @@
 
 # This function adds two numbers
 import decimal
+import math
 
 
 def add(x, y):
@@ -57,8 +58,8 @@ def compute_hcf(x, y):
     else:
         multiplier = int("1" + (dp_y * "0"))
 
-    final_x = int(dec_x*multiplier)
-    final_y = int(dec_y*multiplier)
+    final_x = int(dec_x * multiplier)
+    final_y = int(dec_y * multiplier)
 
     # choose the smaller number
     if final_x > final_y:
@@ -69,13 +70,17 @@ def compute_hcf(x, y):
         if (final_x % i == 0) and (final_y % i == 0):
             hcf = i
 
-    hcf = hcf/multiplier
+    hcf = hcf / multiplier
     return hcf
 
 
 # This function finds the exponent of a number
 def compute_power(base, exponent):
     return pow(base, exponent)
+
+
+def area_of_circle(radius):
+    return math.pi * (compute_power(radius, 2))
 
 
 print("Select operation.")
@@ -86,37 +91,54 @@ print("4.Divide")
 print("5.LCM of 2 numbers")
 print("6.HCF of 2 numbers")
 print("7.Power")
+print("8.Circle's Area")
 print("0.Exit")
 
 while True:
     # Take input from the user
-    choice = input("Enter choice: ")
+    choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8'):
 
         if choice == '1':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print(num1, "+", num2, " = ", add(num1, num2))
 
         elif choice == '2':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print(num1, "-", num2, " = ", subtract(num1, num2))
 
         elif choice == '3':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print(num1, "*", num2, " = ", multiply(num1, num2))
 
         elif choice == '4':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print(num1, "/", num2, " = ", divide(num1, num2))
 
         elif choice == '5':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print("LCM of ", num1, " & ", num2, " = ", compute_lcm(num1, num2))
 
         elif choice == '6':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
             print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
+
+        elif choice == '8':
+            num1 = float(input("Enter the radius: "))
+            print("area of circle with radius ", num1, " is", area_of_circle(num1))
 
     elif choice == '0':
         print('Thanks for using')
