@@ -48,15 +48,9 @@ def compute_hcf(x, y):
     hcf = 0
     dec_x = decimal.Decimal(str(x))
     dec_y = decimal.Decimal(str(y))
-    print("step 1 - decimal")
-    print(dec_x)
-    print(dec_y)
 
     dp_x = -(dec_x.as_tuple().exponent)
     dp_y = -(dec_y.as_tuple().exponent)
-    print("step 2 - decimal places")
-    print(dp_x)
-    print(dp_y)
 
     if dp_x > dp_y:
         multiplier = int("1" + (dp_x * "0"))
@@ -65,13 +59,6 @@ def compute_hcf(x, y):
 
     final_x = int(dec_x*multiplier)
     final_y = int(dec_y*multiplier)
-
-    print("step 3 - multiplier")
-    print(multiplier)
-
-    print("step 4 - modified initial val")
-    print(final_x)
-    print(final_y)
 
     # choose the smaller number
     if final_x > final_y:
@@ -129,8 +116,8 @@ while True:
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
-            print(num1, "/", num2, "=", compute_power(num1, num2))            
-            
+            print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
+
     elif choice == '0':
         print('Thanks for using')
         break
