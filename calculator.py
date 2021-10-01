@@ -85,8 +85,8 @@ while True:
             print("LCM of ", num1, " & ", num2, " = ", compute_lcm(num1, num2))
 
         elif choice == '6':
-            print(num1, "/", num2, "=", compute_hcf(num1, num2))
-            
+            print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
+
         elif choice == '7':
             print(num1, "/", num2, "=", compute_power(num1, num2))            
             
