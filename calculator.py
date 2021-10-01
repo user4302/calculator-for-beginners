@@ -1,16 +1,22 @@
 # Program make a simple calculator
 
 # This function adds two numbers
+import decimal
+
+
 def add(x, y):
     return x + y
+
 
 # This function subtracts two numbers
 def subtract(x, y):
     return x - y
 
+
 # This function multiplies two numbers
 def multiply(x, y):
     return x * y
+
 
 # This function divides two numbers
 def divide(x, y):
@@ -19,36 +25,58 @@ def divide(x, y):
     else:
         return 'denominator can not be zero'
 
+
 # This function finds the L.C.M. of two input number
 def compute_lcm(x, y):
     # choose the greater number
     if x > y:
-       greater = x
+        greater = x
     else:
-       greater = y
+        greater = y
 
-    while(True):
-       if((greater % x == 0) and (greater % y == 0)):
-           lcm = greater
-           break
-       greater += 1
+    while (True):
+        if ((greater % x == 0) and (greater % y == 0)):
+            lcm = greater
+            break
+        greater += 1
     return lcm
+
 
 # This function finds the H.C.F of two numbers
 def compute_hcf(x, y):
-# choose the smaller number
-    if x > y:
-        smaller = y
+    # validate decimal values
+    hcf = 0
+    dec_x = decimal.Decimal(str(x))
+    dec_y = decimal.Decimal(str(y))
+
+    dp_x = -(dec_x.as_tuple().exponent)
+    dp_y = -(dec_y.as_tuple().exponent)
+
+    if dp_x > dp_y:
+        multiplier = int("1" + (dp_x * "0"))
     else:
-        smaller = x
-    for i in range(1, smaller+1):
-        if((x % i == 0) and (y % i == 0)):
+        multiplier = int("1" + (dp_y * "0"))
+
+    final_x = int(dec_x*multiplier)
+    final_y = int(dec_y*multiplier)
+
+    # choose the smaller number
+    if final_x > final_y:
+        smaller = final_y
+    else:
+        smaller = final_x
+    for i in range(1, smaller + 1):
+        if (final_x % i == 0) and (final_y % i == 0):
             hcf = i
+
+    hcf = hcf/multiplier
     return hcf
+
 
 # This function finds the exponent of a number
 def compute_power(base, exponent):
     return pow(base, exponent)
+
 
 print("Select operation.")
 print("1.Add")
@@ -88,8 +116,8 @@ while True:
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
-            print(num1, "/", num2, "=", compute_power(num1, num2))            
-            
+            print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
+
     elif choice == '0':
         print('Thanks for using')
         break
