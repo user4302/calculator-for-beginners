@@ -79,14 +79,19 @@ def compute_power(base, exponent):
     return pow(base, exponent)
 
 
-# Calculates the area iof a circle
+# Calculates the area of a circle
 def area_of_circle(radius):
     return math.pi * (compute_power(radius, 2))
 
 
-# Calculates the circumference iof a circle
+# Calculates the circumference of a circle
 def circumference_of_circle(radius):
     return 2 * math.pi * radius
+
+
+# Convert a value from radian to degree
+def radian_to_degree(radian):
+    return math.degrees(radian)
 
 
 print("Select operation.")
@@ -99,6 +104,7 @@ print("6.HCF of 2 numbers")
 print("7.Power")
 print("8.Circle's Area")
 print("9.Circle's Circumference")
+print("10.Convert radian to degree")
 print("0.Exit")
 
 while True:
@@ -106,7 +112,7 @@ while True:
     choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'):
 
         if choice == '1':
             num1 = float(input("Enter first number: "))
@@ -149,7 +155,11 @@ while True:
 
         elif choice == '9':
             num1 = float(input("Enter the radius: "))
-            print("Circumference of circle with radius ", num1, " is", circumference_of_circle(num1))
+            print("Circumference of circle with radius", num1, "is", circumference_of_circle(num1))
+
+        elif choice == '10':
+            num1 = float(input("Enter a number in radians: "))
+            print("Radian valuer of", num1, " in decimal is", radian_to_degree(num1))
 
     elif choice == '0':
         print('Thanks for using')
