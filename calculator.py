@@ -94,6 +94,11 @@ def radian_to_degree(radian):
     return math.degrees(radian)
 
 
+# Convert a value from degree to radian
+def degree_to_radian(degree):
+    return math.radians(degree)
+
+
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
@@ -105,6 +110,7 @@ print("7.Power")
 print("8.Circle's Area")
 print("9.Circle's Circumference")
 print("10.Convert radian to degree")
+print("11.Convert degree to radian")
 print("0.Exit")
 
 while True:
@@ -112,7 +118,7 @@ while True:
     choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'):
 
         if choice == '1':
             num1 = float(input("Enter first number: "))
@@ -159,7 +165,11 @@ while True:
 
         elif choice == '10':
             num1 = float(input("Enter a number in radians: "))
-            print("Radian valuer of", num1, " in decimal is", radian_to_degree(num1))
+            print("Radian value of", num1, " in decimal is", radian_to_degree(num1))
+
+        elif choice == '11':
+            num1 = float(input("Enter a number in degrees: "))
+            print("Degree value of", num1, " in radians is", degree_to_radian(num1))
 
     elif choice == '0':
         print('Thanks for using')
