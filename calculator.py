@@ -1,6 +1,6 @@
 # Program make a simple calculator
 
-# This function adds two numbers
+# Adds two numbers
 import decimal
 import math
 
@@ -9,17 +9,17 @@ def add(x, y):
     return x + y
 
 
-# This function subtracts two numbers
+# Subtracts two numbers
 def subtract(x, y):
     return x - y
 
 
-# This function multiplies two numbers
+# Multiplies two numbers
 def multiply(x, y):
     return x * y
 
 
-# This function divides two numbers
+# Divides two numbers
 def divide(x, y):
     if y != 0:
         return x / y  # denominator can't be zero
@@ -27,7 +27,7 @@ def divide(x, y):
         return 'denominator can not be zero'
 
 
-# This function finds the L.C.M. of two input number
+# Calculates the L.C.M. of two input number
 def compute_lcm(x, y):
     # choose the greater number
     if x > y:
@@ -43,7 +43,7 @@ def compute_lcm(x, y):
     return lcm
 
 
-# This function finds the H.C.F of two numbers
+# Calculates the H.C.F of two numbers
 def compute_hcf(x, y):
     # validate decimal values
     hcf = 0
@@ -74,15 +74,17 @@ def compute_hcf(x, y):
     return hcf
 
 
-# This function finds the exponent of a number
+# Calculates the exponent of a number
 def compute_power(base, exponent):
     return pow(base, exponent)
 
 
+# Calculates the area iof a circle
 def area_of_circle(radius):
     return math.pi * (compute_power(radius, 2))
 
 
+# Calculates the circumference iof a circle
 def circumference_of_circle(radius):
     return 2 * math.pi * radius
 
