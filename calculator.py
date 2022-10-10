@@ -81,7 +81,6 @@ def compute_power(base, exponent):
 def area_of_circle(radius):
     return math.pi * compute_power(radius, 2)
 
-
 # Calculates the circumference of a circle
 def circumference_of_circle(radius):
     return 2 * math.pi * radius
@@ -92,13 +91,11 @@ def radian_to_degree(radian):
 
 # Convert a value from degree to radian
 def degree_to_radian(degree):
-    return math.radians(degree)
-
+    return degree * (math.pi/180)
 
 # Convert a value from degree to radian
 def sin_zero(degree):
     return math.radians(degree)
-
 
     # Convert a value from degree to radian
 def cos_zero(degree):
