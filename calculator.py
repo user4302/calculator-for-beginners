@@ -22,7 +22,7 @@ def multiply(x, y):
 # Divides two numbers
 def divide(x, y):
     if y != 0:
-        return x / y  # denominator can't be zero
+        return x / y 
     else:
         return 'denominator can not be zero'
 
@@ -76,7 +76,12 @@ def compute_hcf(x, y):
 
 # Calculates the exponent of a number
 def compute_power(base, exponent):
-    return pow(base, exponent)
+    # return pow(base, exponent)
+    answer = 1
+    while exponent > 0:
+        answer = base * answer
+        exponent -= 1
+    return answer
 
 
 # Calculates the area of a circle
@@ -96,6 +101,21 @@ def radian_to_degree(radian):
 
 # Convert a value from degree to radian
 def degree_to_radian(degree):
+    return math.radians(degree)
+
+
+# Convert a value from degree to radian
+def sin_zero(degree):
+    return math.radians(degree)
+
+
+    # Convert a value from degree to radian
+def cos_zero(degree):
+    return math.radians(degree)
+
+
+    # Convert a value from degree to radian
+def tan_zero(degree):
     return math.radians(degree)
 
 
