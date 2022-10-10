@@ -97,13 +97,17 @@ def radian_to_degree(radian):
 def degree_to_radian(degree):
     return degree * (math.pi/180)
 
-# Convert a value from degree to radian
-def sin_zero(degree):
-    return math.radians(degree)
 
-    # Convert a value from degree to radian
-def cos_zero(degree):
-    return math.radians(degree)
+# find the length of a side using pythagoras theorem
+def pythagoras_theorem(sideA, hypotenuse, sideB):
+    if hypotenuse == 'x':
+        return square_root(compute_power(sideA, 2) + compute_power(sideB, 2))
+
+    if sideA == 'x':
+        return square_root(compute_power(hypotenuse, 2) - compute_power(sideB, 2))
+
+    if sideB == 'x':
+        return square_root(compute_power(hypotenuse, 2) - compute_power(sideA, 2))
 
 def square_root(number):
     return compute_power(number, None)
