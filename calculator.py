@@ -86,11 +86,9 @@ def area_of_circle(radius):
 def circumference_of_circle(radius):
     return 2 * math.pi * radius
 
-
 # Convert a value from radian to degree
 def radian_to_degree(radian):
-    return math.degrees(radian)
-
+    return radian * (180/math.pi)
 
 # Convert a value from degree to radian
 def degree_to_radian(degree):
