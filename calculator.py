@@ -76,14 +76,14 @@ def compute_power(base, exponent):
         return base ** 0.5
 
     else:
-    if(exponent<0):
-        positiveExponent=exponent*-1
-        return 1/(base**positiveExponent)
-    else:
-        while exponent > 0:
-            answer = base * answer
-            exponent -= 1
-        return answer
+        if(exponent<0):
+            positiveExponent=exponent*-1
+            return 1/(base**positiveExponent)
+        else:
+            while exponent > 0:
+                answer = base * answer
+                exponent -= 1
+            return answer
     
 # Calculates the area of a circle
 def area_of_circle(radius):
@@ -147,7 +147,7 @@ def pythagoras_theorem(sideA, hypotenuse, sideB):
 
     if sideA == 'x':
         return square_root(compute_power(hypotenuse, 2) - compute_power(sideB, 2))
-
+        
     if sideB == 'x':
         return square_root(compute_power(hypotenuse, 2) - compute_power(sideA, 2))
 
@@ -162,10 +162,13 @@ print("4.Divide")
 print("5.LCM of 2 numbers")
 print("6.HCF of 2 numbers")
 print("7.Power")
-print("8.Circle's Area")
-print("9.Circle's Circumference")
-print("10.Convert radian to degree")
-print("11.Convert degree to radian")
+print("8.Square root")
+print("9.Circle's Area")
+print("10.Circle's Circumference")
+print("11.Convert radian to degree")
+print("12.Convert degree to radian")
+print("13.Find the value of X, using Sine, Cosine or Tangent")
+print("14.Pythagoras theorem")
 print("0.Exit")
 
 while True:
@@ -173,7 +176,7 @@ while True:
     choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'):
 
         if choice == '1':
             num1 = float(input("Enter first number: "))
@@ -211,20 +214,40 @@ while True:
             print(base, " to the power of ", exponent, " = ", compute_power(base, exponent))
 
         elif choice == '8':
-            num1 = float(input("Enter the radius: "))
-            print("Area of circle with radius ", num1, " is", area_of_circle(num1))
+            base = float(input("Enter the base: "))
+            print("Square root of ", base, " = ", square_root(base))
 
         elif choice == '9':
             num1 = float(input("Enter the radius: "))
-            print("Circumference of circle with radius", num1, "is", circumference_of_circle(num1))
+            print("Area of circle with radius ", num1, " is", area_of_circle(num1))
 
         elif choice == '10':
+            num1 = float(input("Enter the radius: "))
+            print("Circumference of circle with radius", num1, "is", circumference_of_circle(num1))
+
+        elif choice == '11':
             num1 = float(input("Enter a number in radians: "))
             print("Radian value of", num1, " in decimal is", radian_to_degree(num1))
 
-        elif choice == '11':
+        elif choice == '12':
             num1 = float(input("Enter a number in degrees: "))
             print("Degree value of", num1, " in radians is", degree_to_radian(num1))
+
+        elif choice == '13':
+            print("for the value to be found, enter a lowercase 'x' without the quotes.")
+            print("for the value that is not needed to be found, leave it blank.")
+            opposite = (input("Length of opposite side: "))
+            hypotenuse = (input("Length of hypotenuse side: "))
+            adjacent = (input("Length of adjacent side: "))
+            angle = (input("Angle in degrees: "))
+            print("The value of X is", find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle))
+
+        elif choice == '14':
+            print("for the value to be found, enter a lowercase 'x' without the quotes.")
+            opposite = (input("Length of side A: "))
+            hypotenuse = (input("Length of hypotenuse side: "))
+            adjacent = (input("Length of side B: "))
+            print("The length of the missing side is", pythagoras_theorem(opposite, hypotenuse, adjacent))
 
     elif choice == '0':
         print('Thanks for using')
