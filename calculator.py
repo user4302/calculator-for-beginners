@@ -1,10 +1,9 @@
-# Program make a simple calculator
+# Program for a simple calculator
 
-# Adds two numbers
 import decimal
 import math
 
-
+# Adds two numbers
 def add(x, y):
     return x + y
 
@@ -72,11 +71,16 @@ def compute_hcf(x, y):
 def compute_power(base, exponent):
     # return pow(base, exponent)
     answer = 1
-    while exponent > 0:
-        answer = base * answer
-        exponent -= 1
-    return answer
-
+    if(exponent<0):
+        positiveExponent=exponent*-1
+        return 1/(base**positiveExponent)
+    else:
+        while exponent > 0:
+            print(answer)
+            answer = base * answer
+            exponent -= 1
+        return answer
+    
 # Calculates the area of a circle
 def area_of_circle(radius):
     return math.pi * compute_power(radius, 2)
@@ -101,11 +105,9 @@ def sin_zero(degree):
 def cos_zero(degree):
     return math.radians(degree)
 
-
     # Convert a value from degree to radian
 def tan_zero(degree):
     return math.radians(degree)
-
 
 print("Select operation.")
 print("1.Add")
@@ -159,8 +161,8 @@ while True:
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            num1 = float(input("Enter the base: "))
+            num2 = float(input("Enter the exponent: "))
             print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
 
         elif choice == '8':
