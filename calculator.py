@@ -105,9 +105,8 @@ def sin_zero(degree):
 def cos_zero(degree):
     return math.radians(degree)
 
-    # Convert a value from degree to radian
-def tan_zero(degree):
-    return math.radians(degree)
+def square_root(number):
+    return compute_power(number, None)
 
 print("Select operation.")
 print("1.Add")
