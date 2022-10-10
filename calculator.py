@@ -161,9 +161,9 @@ while True:
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
-            num1 = float(input("Enter the base: "))
-            num2 = float(input("Enter the exponent: "))
-            print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
+            base = float(input("Enter the base: "))
+            exponent = float(input("Enter the exponent: "))
+            print(base, " to the power of ", exponent, " = ", compute_power(base, exponent))
 
         elif choice == '8':
             num1 = float(input("Enter the radius: "))
