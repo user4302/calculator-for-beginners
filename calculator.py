@@ -8,16 +8,13 @@ import math
 def add(x, y):
     return x + y
 
-
 # Subtracts two numbers
 def subtract(x, y):
     return x - y
 
-
 # Multiplies two numbers
 def multiply(x, y):
     return x * y
-
 
 # Divides two numbers
 def divide(x, y):
@@ -25,7 +22,6 @@ def divide(x, y):
         return x / y 
     else:
         return 'denominator can not be zero'
-
 
 # Calculates the L.C.M. of two input number
 def compute_lcm(x, y):
@@ -41,7 +37,6 @@ def compute_lcm(x, y):
             break
         greater += 1
     return lcm
-
 
 # Calculates the H.C.F of two numbers
 def compute_hcf(x, y):
@@ -73,7 +68,6 @@ def compute_hcf(x, y):
     hcf = hcf / multiplier
     return hcf
 
-
 # Calculates the exponent of a number
 def compute_power(base, exponent):
     # return pow(base, exponent)
@@ -83,10 +77,9 @@ def compute_power(base, exponent):
         exponent -= 1
     return answer
 
-
 # Calculates the area of a circle
 def area_of_circle(radius):
-    return math.pi * (compute_power(radius, 2))
+    return math.pi * compute_power(radius, 2)
 
 
 # Calculates the circumference of a circle
