@@ -101,6 +101,44 @@ def radian_to_degree(radian):
 def degree_to_radian(degree):
     return degree * (math.pi/180)
 
+# Find the value of x using Sine, Cosine or Tangent
+def find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle):
+    print(type(hypotenuse) is str)
+    if opposite != 'x' and opposite != '': opposite = float(opposite)
+    if hypotenuse != 'x' and hypotenuse != '': hypotenuse = float(hypotenuse)
+    if adjacent != 'x' and adjacent != '': adjacent = float(adjacent)
+    if angle != 'x' and angle != '': angle = float(angle)
+    # soh
+    if adjacent == '':
+        if opposite == 'x':
+            return hypotenuse * (math.sin(angle))
+        if hypotenuse == 'x':
+            return opposite/(math.sin(angle))
+        if angle == 'x':
+            return (math.sine(opposite/hypotenuse))
+
+    # cah
+    if opposite == '':
+        if adjacent == 'x':
+            return hypotenuse * (math.cos(angle))
+        if hypotenuse == 'x':
+            return adjacent/(math.cos(angle))
+        if angle == 'x':
+            return (math.cos(adjacent/hypotenuse))
+
+    # toa
+    if hypotenuse == '':
+        if opposite == 'x':
+            return adjacent * (math.tan(angle))
+        if adjacent == 'x':
+            return opposite/(math.tan(angle))
+        if angle == 'x':
+            return (math.tan(opposite/adjacent))
+
+    # angle
+    if angle == '':
+        print("Pythagoras therom will be used to find the length of a missing side.")
+        return pythagoras_theorem(opposite, hypotenuse, adjacent)
 
 # find the length of a side using pythagoras theorem
 def pythagoras_theorem(sideA, hypotenuse, sideB):
