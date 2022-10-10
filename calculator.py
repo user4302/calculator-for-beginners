@@ -69,14 +69,18 @@ def compute_hcf(x, y):
 
 # Calculates the exponent of a number
 def compute_power(base, exponent):
+    base = float(base)
     # return pow(base, exponent)
     answer = 1
+    if(exponent == None):
+        return base ** 0.5
+
+    else:
     if(exponent<0):
         positiveExponent=exponent*-1
         return 1/(base**positiveExponent)
     else:
         while exponent > 0:
-            print(answer)
             answer = base * answer
             exponent -= 1
         return answer
