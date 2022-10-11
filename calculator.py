@@ -110,34 +110,43 @@ def find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle):
     if angle != 'x' and angle != '': angle = float(angle)
     # soh
     if adjacent == '':
+        # opp = hyp*sinZ
         if opposite == 'x':
             return hypotenuse * (math.sin(angle))
+        # hyp = opp/sinZ
         if hypotenuse == 'x':
             return opposite/(math.sin(angle))
+        # ang = sin(opp/hyp)
         if angle == 'x':
             return (math.sine(opposite/hypotenuse))
 
     # cah
     if opposite == '':
+        # adj = hyp*cosZ
         if adjacent == 'x':
             return hypotenuse * (math.cos(angle))
+        # hyp = adj/cosZ
         if hypotenuse == 'x':
             return adjacent/(math.cos(angle))
+        # ang = cos(adj/hyp)
         if angle == 'x':
             return (math.cos(adjacent/hypotenuse))
 
     # toa
     if hypotenuse == '':
+        # opp = adj*tanZ
         if opposite == 'x':
             return adjacent * (math.tan(angle))
+        # adj = opp/tanZ
         if adjacent == 'x':
             return opposite/(math.tan(angle))
+        # ang = tan(opp/adj)
         if angle == 'x':
             return (math.tan(opposite/adjacent))
 
     # angle
     if angle == '':
-        print("Pythagoras therom will be used to find the length of a missing side.")
+        print('No angle was given.\nPythagoras therom will be used to find the length of a missing side.')
         return pythagoras_theorem(opposite, hypotenuse, adjacent)
 
 # find the length of a side using pythagoras theorem
