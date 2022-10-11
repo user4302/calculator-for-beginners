@@ -1,6 +1,8 @@
+
+
 # Contribution Guidelines
 
-all PRs that are submittd must be of good quality.
+All PRs that are submittd must be of good quality.
 insignificant or spammy PRs will be rejected or labelled as spam and will not be counted towards your hacktoberfest PR count.
 
 ## Avoid Submitting Low-quality Pull/merge Requests
