@@ -1,31 +1,26 @@
-# Program make a simple calculator
+# Program for a simple calculator
 
-# Adds two numbers
 import decimal
 import math
 
-
+# Adds two numbers
 def add(x, y):
     return x + y
-
 
 # Subtracts two numbers
 def subtract(x, y):
     return x - y
 
-
 # Multiplies two numbers
 def multiply(x, y):
     return x * y
 
-
 # Divides two numbers
 def divide(x, y):
     if y != 0:
-        return x / y  # denominator can't be zero
+        return x / y 
     else:
         return 'denominator can not be zero'
-
 
 # Calculates the L.C.M. of two input number
 def compute_lcm(x, y):
@@ -41,7 +36,6 @@ def compute_lcm(x, y):
             break
         greater += 1
     return lcm
-
 
 # Calculates the H.C.F of two numbers
 def compute_hcf(x, y):
@@ -73,31 +67,101 @@ def compute_hcf(x, y):
     hcf = hcf / multiplier
     return hcf
 
-
 # Calculates the exponent of a number
 def compute_power(base, exponent):
-    return pow(base, exponent)
+    base = float(base)
+    # return pow(base, exponent)
+    answer = 1
+    if(exponent == None):
+        return base ** 0.5
 
-
+    else:
+        if(exponent<0):
+            positiveExponent=exponent*-1
+            return 1/(base**positiveExponent)
+        else:
+            while exponent > 0:
+                answer = base * answer
+                exponent -= 1
+            return answer
+    
 # Calculates the area of a circle
 def area_of_circle(radius):
-    return math.pi * (compute_power(radius, 2))
-
+    return math.pi * compute_power(radius, 2)
 
 # Calculates the circumference of a circle
 def circumference_of_circle(radius):
     return 2 * math.pi * radius
 
-
 # Convert a value from radian to degree
 def radian_to_degree(radian):
-    return math.degrees(radian)
-
+    return radian * (180/math.pi)
 
 # Convert a value from degree to radian
 def degree_to_radian(degree):
-    return math.radians(degree)
+    return degree * (math.pi/180)
 
+# Find the value of x using Sine, Cosine or Tangent
+def find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle):
+    print(type(hypotenuse) is str)
+    if opposite != 'x' and opposite != '': opposite = float(opposite)
+    if hypotenuse != 'x' and hypotenuse != '': hypotenuse = float(hypotenuse)
+    if adjacent != 'x' and adjacent != '': adjacent = float(adjacent)
+    if angle != 'x' and angle != '': angle = float(angle)
+    # soh
+    if adjacent == '':
+        # opp = hyp*sinZ
+        if opposite == 'x':
+            return hypotenuse * (math.sin(angle))
+        # hyp = opp/sinZ
+        if hypotenuse == 'x':
+            return opposite/(math.sin(angle))
+        # ang = sin(opp/hyp)
+        if angle == 'x':
+            return (math.sine(opposite/hypotenuse))
+
+    # cah
+    if opposite == '':
+        # adj = hyp*cosZ
+        if adjacent == 'x':
+            return hypotenuse * (math.cos(angle))
+        # hyp = adj/cosZ
+        if hypotenuse == 'x':
+            return adjacent/(math.cos(angle))
+        # ang = cos(adj/hyp)
+        if angle == 'x':
+            return (math.cos(adjacent/hypotenuse))
+
+    # toa
+    if hypotenuse == '':
+        # opp = adj*tanZ
+        if opposite == 'x':
+            return adjacent * (math.tan(angle))
+        # adj = opp/tanZ
+        if adjacent == 'x':
+            return opposite/(math.tan(angle))
+        # ang = tan(opp/adj)
+        if angle == 'x':
+            return (math.tan(opposite/adjacent))
+
+    # angle
+    if angle == '':
+        print('No angle was given.\nPythagoras therom will be used to find the length of a missing side.')
+        return pythagoras_theorem(opposite, hypotenuse, adjacent)
+
+# find the length of a side using pythagoras theorem
+def pythagoras_theorem(sideA, hypotenuse, sideB):
+    if hypotenuse == 'x':
+        return square_root(compute_power(sideA, 2) + compute_power(sideB, 2))
+
+    if sideA == 'x':
+        return square_root(compute_power(hypotenuse, 2) - compute_power(sideB, 2))
+        
+    if sideB == 'x':
+        return square_root(compute_power(hypotenuse, 2) - compute_power(sideA, 2))
+
+def square_root(number):
+    return compute_power(number, None)
 
 print("Select operation.")
 print("1.Add")
@@ -107,10 +171,13 @@ print("4.Divide")
 print("5.LCM of 2 numbers")
 print("6.HCF of 2 numbers")
 print("7.Power")
-print("8.Circle's Area")
-print("9.Circle's Circumference")
-print("10.Convert radian to degree")
-print("11.Convert degree to radian")
+print("8.Square root")
+print("9.Circle's Area")
+print("10.Circle's Circumference")
+print("11.Convert radian to degree")
+print("12.Convert degree to radian")
+print("13.Find the value of X, using Sine, Cosine or Tangent")
+print("14.Pythagoras theorem")
 print("0.Exit")
 
 while True:
@@ -118,7 +185,7 @@ while True:
     choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'):
 
         if choice == '1':
             num1 = float(input("Enter first number: "))
@@ -151,25 +218,45 @@ while True:
             print("HCF of ", num1, " & ", num2, " = ", compute_hcf(num1, num2))
 
         elif choice == '7':
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-            print(num1, " to the power of ", num2, " = ", compute_power(num1, num2))
+            base = float(input("Enter the base: "))
+            exponent = float(input("Enter the exponent: "))
+            print(base, " to the power of ", exponent, " = ", compute_power(base, exponent))
 
         elif choice == '8':
-            num1 = float(input("Enter the radius: "))
-            print("Area of circle with radius ", num1, " is", area_of_circle(num1))
+            base = float(input("Enter the base: "))
+            print("Square root of ", base, " = ", square_root(base))
 
         elif choice == '9':
             num1 = float(input("Enter the radius: "))
-            print("Circumference of circle with radius", num1, "is", circumference_of_circle(num1))
+            print("Area of circle with radius ", num1, " is", area_of_circle(num1))
 
         elif choice == '10':
+            num1 = float(input("Enter the radius: "))
+            print("Circumference of circle with radius", num1, "is", circumference_of_circle(num1))
+
+        elif choice == '11':
             num1 = float(input("Enter a number in radians: "))
             print("Radian value of", num1, " in decimal is", radian_to_degree(num1))
 
-        elif choice == '11':
+        elif choice == '12':
             num1 = float(input("Enter a number in degrees: "))
             print("Degree value of", num1, " in radians is", degree_to_radian(num1))
+
+        elif choice == '13':
+            print("for the value to be found, enter a lowercase 'x' without the quotes.")
+            print("for the value that is not needed to be found, leave it blank.")
+            opposite = (input("Length of opposite side: "))
+            hypotenuse = (input("Length of hypotenuse side: "))
+            adjacent = (input("Length of adjacent side: "))
+            angle = (input("Angle in degrees: "))
+            print("The value of X is", find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle))
+
+        elif choice == '14':
+            print("for the value to be found, enter a lowercase 'x' without the quotes.")
+            opposite = (input("Length of side A: "))
+            hypotenuse = (input("Length of hypotenuse side: "))
+            adjacent = (input("Length of side B: "))
+            print("The length of the missing side is", pythagoras_theorem(opposite, hypotenuse, adjacent))
 
     elif choice == '0':
         print('Thanks for using')
