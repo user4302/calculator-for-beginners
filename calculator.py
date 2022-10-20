@@ -36,6 +36,10 @@ def compute_lcm(x, y):
             break
         greater += 1
     return lcm
+    # the math.lcm() function will give the same answer with less lines of code
+    # example: 
+    #   import math
+    #   print(math.lcm(2,3,4)) [find the the least common multiple of the integers]
 
 # Calculates the H.C.F of two numbers
 def compute_hcf(x, y):
@@ -66,6 +70,10 @@ def compute_hcf(x, y):
 
     hcf = hcf / multiplier
     return hcf
+    # the math.gcd() function will give the same answer with less lines of code
+    # example: 
+    #   import math
+    #   print(math.gcd(12,18)) [find the the greatest common divisor(also called The Highest Common Factor) of the two integers]
 
 # Calculates the exponent of a number
 def compute_power(base, exponent):
@@ -84,7 +92,11 @@ def compute_power(base, exponent):
                 answer = base * answer
                 exponent -= 1
             return answer
-    
+    # the math.pow() function will give the same answer with less lines of code
+    # example: 
+    #   import math
+    #   print(math.pow(9, 3))  [Return the value of 9 raised to the power of 3]
+
 # Calculates the area of a circle
 def area_of_circle(radius):
     return math.pi * compute_power(radius, 2)
@@ -96,10 +108,24 @@ def circumference_of_circle(radius):
 # Convert a value from radian to degree
 def radian_to_degree(radian):
     return radian * (180/math.pi)
+    # the math.degrees() function will give the same answer in a simpler way
+    # examples:
+    #   import math
+    
+    #   print (math.degrees(math.pi / 180))
+    #   print (math.degrees(180))
+    #   print (math.degrees(1))
 
 # Convert a value from degree to radian
 def degree_to_radian(degree):
     return degree * (math.pi/180)
+    # the math.radians() function will give the same answer in a simpler way
+    # examples:
+    #   import math
+
+    #   print (math.radians(180 / math.pi))
+    #   print (math.radians(180))
+    #   print (math.radians(1))
 
 # Find the value of x using Sine, Cosine or Tangent
 def find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle):
@@ -148,6 +174,27 @@ def find_x_with_sin_cos_tan(opposite, hypotenuse, adjacent, angle):
     if angle == '':
         print('No angle was given.\nPythagoras therom will be used to find the length of a missing side.')
         return pythagoras_theorem(opposite, hypotenuse, adjacent)
+        # math.sin(), math.cos() and math.tan() can be used to make thwese calculations in a simpler way and using less code
+        # examples of how math. can be used:
+        #   Sine:
+        #       math.sin(math.pi / 2) [Out: 1.0]
+        #       math.sin(math.radians(90))   # Sine of 90 degrees [Out: 1.0]
+        #   arc sine:
+        #       math.asin(1) [Out: 1.5707963267948966  (= pi / 2)]
+        #       math.asin(1) / math.pi [Out: 0.5]
+
+        #   Cosine:
+        #       math.cos(math.pi / 2) [Out: 6.123233995736766e-17 ]
+        #           Almost zero but not exactly because "pi" is a float with limited precision!
+        #   arc cosine:
+        #       math.acos(1) [Out: 0.0]
+
+        #   Tangent:
+        #       math.tan(math.pi/2) [Out: 1.633123935319537e+16 ]
+        #           Very large but not exactly "Inf" because "pi" is a float with limited precision
+        #   arc tangent:
+        #       math.atan(math.inf) [Out: 1.5707963267948966 # This is just "pi / 2"]
+        #       math.atan(float('inf')) [Out: 1.5707963267948966 # This is just "pi / 2"]
 
 # find the length of a side using pythagoras theorem
 def pythagoras_theorem(sideA, hypotenuse, sideB):
@@ -159,9 +206,17 @@ def pythagoras_theorem(sideA, hypotenuse, sideB):
         
     if sideB == 'x':
         return square_root(compute_power(hypotenuse, 2) - compute_power(sideA, 2))
+        # the math.hypot() function will give the same answer with less lines of code
+        # example: 
+        #   import math
+        #   print(math.hypot(2, 4))  [Return the value of SquareRoot(2**2 + 4**2)]
 
 def square_root(number):
     return compute_power(number, None)
+    # the math.sqrt() function will give the same answer with less lines of code
+    # example:
+    #   import math
+    #   print (math.sqrt(9)) [Return the square root of 9]
 
 print("Select operation.")
 print("1.Add")
