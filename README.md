@@ -4,17 +4,17 @@ This is a single python file that contains multiple mathematical functions that 
 The functions are implemented using basic mathematical operations so that beginners to coding can learn how to implements mathematics in python.
 
 The following are the implemented mathematical functions in this calculator:
- - addition
- - subtraction
- - multiplication
- - division
+ - Addition
+ - Subtraction
+ - Multiplication
+ - Division
  - LCM calculation
  - HCF (GCD) calculation
- - power calculation
- - circle area calculation
- - circle circumference calculation
- - radian to degree conversion
- - degree to radian conversion
- - finding X using sine cosine and tangent
- - finding a missing value using pythagoras theorem
- - square root calculation
+ - Power calculation
+ - Circle area calculation
+ - Circle circumference calculation
+ - Radian to degree conversion
+ - Degree to radian conversion
+ - Finding X using sine cosine and tangent
+ - Finding a missing value using pythagoras theorem
+ - Square root calculation
