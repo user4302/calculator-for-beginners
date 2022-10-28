@@ -16,5 +16,5 @@ The following are the implemented mathematical functions in this calculator:
  - Radian to degree conversion
  - Degree to radian conversion
  - Finding X using sine cosine and tangent
- - Finding a missing value using pythagoras theorem
+ - Finding a missing value using Pythagoras theorem
  - Square root calculation
