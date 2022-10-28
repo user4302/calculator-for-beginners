@@ -217,6 +217,14 @@ def square_root(number):
     # example:
     #   import math
     #   print (math.sqrt(9)) [Return the square root of 9]
+        
+def area_of_triangle(sideA, sideB, sideC):
+    # calculate the semi-perimeter  
+    semiPerimeter = (sideA + sideB + sideC) / 2  
+
+    # calculate the area  
+    return (semiPerimeter*(semiPerimeter-sideA)*(semiPerimeter-sideB)*(semiPerimeter-sideC)) ** 0.5  
+
 
 print("Select operation.")
 print("1.Add")
@@ -233,6 +241,7 @@ print("11.Convert radian to degree")
 print("12.Convert degree to radian")
 print("13.Find the value of X, using Sine, Cosine or Tangent")
 print("14.Pythagoras theorem")
+print("15.Area of a triangle")
 print("0.Exit")
 
 while True:
@@ -240,7 +249,7 @@ while True:
     choice = input("\nEnter choice: ")
 
     # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15):
 
         if choice == '1':
             num1 = float(input("Enter first number: "))
@@ -312,6 +321,12 @@ while True:
             hypotenuse = (input("Length of hypotenuse side: "))
             adjacent = (input("Length of side B: "))
             print("The length of the missing side is", pythagoras_theorem(opposite, hypotenuse, adjacent))
+                 
+        elif choice == '15':
+            sideA = (input("Length of side A: "))
+            sideB = (input("Length of side B: "))
+            sideC = (input("Length of side C: "))
+            print("The area of the triangle is:", area_of_triangle(sideA, sideB, sideC))
 
     elif choice == '0':
         print('Thanks for using')
